@@ -1,0 +1,111 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>JavaScript Object Operations</title>  
+    <style>  
+        body {  
+            font-family: Arial, sans-serif;  
+            margin: 20px;  
+        }  
+        h1 {  
+            color: #333;  
+        }  
+        .output {  
+            margin-top: 20px;  
+            background-color: #f9f9f9;  
+            padding: 10px;  
+            border: 1px solid #ccc;  
+        }  
+    </style>  
+</head>  
+<body>  
+
+    <h1>JavaScript Object Operations</h1>  
+
+    <div class="output" id="outputArea"></div>  
+
+    <script>  
+        // Question 1: Calculate total price of each item and all items  
+        var itemsArray = [  
+            { name: "juice", price: "50", quantity: "3" },  
+            { name: "cookie", price: "30", quantity: "9" },  
+            { name: "shirt", price: "880", quantity: "1" },  
+            { name: "pen", price: "100", quantity: "2" }  
+        ];  
+
+        let totalAllItems = 0;  
+        let output = "";  
+
+        itemsArray.forEach(item => {  
+            // Convert price and quantity to numbers  
+            let price = Number(item.price);  
+            let quantity = Number(item.quantity);  
+            
+            // Calculate total price for the item  
+            let totalPriceForItem = price * quantity;  
+            
+            // Add to overall total  
+            totalAllItems += totalPriceForItem;  
+            
+            // Prepare output for each item  
+            output += `Total price for ${item.name}: ${totalPriceForItem}<br>`;  
+        });  
+
+        // Prepare output for total price of all items  
+        output += `Total price of all items: ${totalAllItems}<br><br>`;  
+
+        // Question 2: Object property checks  
+        var user = {  
+            name: "Rabiya alam ",  
+            email: "rabbiyaaa@icloud.com",  
+            password: "password123",  
+            age: 20,  
+            gender: "female",  
+            city: "Karachi",  
+            country: "Pakistan"  
+        };  
+
+
+        // Check if 'age' and 'country' properties exist  
+        if ('age' in user) {  
+            output += "The 'age' property exists in the object.<br>";  
+            alert("The 'age' property exists in the object.");  
+        } else {  
+            output += "The 'age' property does not exist in the object.<br>";  
+            alert("Error: The 'age' property does not exist in the object.");  
+        }  
+
+        if ('country' in user) {  
+            output += "The 'country' property exists in the object.<br>";  
+            alert("The 'country' property exists in the object.");  
+        } else {  
+            output += "The 'country' property does not exist in the object.<br>";  
+            alert("Error: The 'country' property does not exist in the object.");  
+        }  
+
+        // Check for 'firstName' and 'lastName' properties  
+        if ('firstName' in user) {  
+            output += "The 'firstName' property exists in the object.<br>";  
+            alert("The 'firstName' property exists in the object.");  
+        } else {  
+            output += "The 'firstName' property does not exist in the object.<br>";  
+            alert("Error: The 'firstName' property does not exist in the object.");  
+        }  
+
+        if ('lastName' in user) {  
+            output += "The 'lastName' property exists in the object.<br>";  
+            alert("The 'lastName' property exists in the object.");  
+        } else {  
+            output += "The 'lastName' property does not exist in the object.<br>";  
+            alert("Error: The 'lastName' property does not exist in the object.");  
+        }  
+
+        // Display output in the HTML  
+        document.getElementById("outputArea").innerHTML = output;  
+
+    </script>  
+
+</body>  
+</html>
